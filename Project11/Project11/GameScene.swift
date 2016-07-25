@@ -21,6 +21,14 @@ class GameScene: SKScene {
             makeBouncerAt(CGPoint(x: positionBouncer * (Int(frame.width) / 4), y: 0))
         }
         
+        for goodSlotPosition in 0...1 {
+            makeSlotAt(CGPoint(x: 128 + (512 * goodSlotPosition), y: 0), isGood: true)
+        }
+        
+        for badSlotPosition in 0...1 {
+            makeSlotAt(CGPoint(x: 384 + (512 * badSlotPosition), y: 0), isGood: false)
+        }
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -44,6 +52,19 @@ class GameScene: SKScene {
         bouncer.physicsBody = SKPhysicsBody(circleOfRadius: bouncer.size.width / 2.0)
         bouncer.physicsBody!.dynamic = false
         addChild(bouncer)
+    }
+    
+    func makeSlotAt(position: CGPoint, isGood: Bool) {
+        var slotBase: SKSpriteNode
+        
+        if isGood {
+            slotBase = SKSpriteNode(imageNamed: "slotBaseGood")
+        } else {
+            slotBase = SKSpriteNode(imageNamed: "slotBaseBad")
+        }
+        
+        slotBase.position = position
+        addChild(slotBase)
     }
     
 }
