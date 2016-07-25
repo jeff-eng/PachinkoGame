@@ -21,12 +21,12 @@ class GameScene: SKScene {
             makeBouncerAt(CGPoint(x: positionBouncer * (Int(frame.width) / 4), y: 0))
         }
         
-        for goodSlotPosition in 0...1 {
-            makeSlotAt(CGPoint(x: 128 + (512 * goodSlotPosition), y: 0), isGood: true)
-        }
-        
-        for badSlotPosition in 0...1 {
-            makeSlotAt(CGPoint(x: 384 + (512 * badSlotPosition), y: 0), isGood: false)
+        for index in 0...3 {
+            if index % 2 == 0 {
+                makeSlotAt(CGPoint(x: 128 + (index * 256), y: 0), isGood: true)
+            } else {
+                makeSlotAt(CGPoint(x: 128 + (index * 256), y: 0), isGood: false)
+            }
         }
         
     }
