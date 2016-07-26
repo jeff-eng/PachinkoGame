@@ -100,8 +100,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    // When finished with the ball and want to get rid of it
+    // When finished with the ball and want to get rid of it; removeFromParent removes node from the scene
     func destroyBall(ball: SKNode) {
         ball.removeFromParent()
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        if contact.bodyA.node!.name == "ball" {
+            collisionBetweenBall(contact.bodyA.node!, object: contact.bodyB.node!)
+        } else if contact.bodyB.node!.name == "ball" {
+            collisionBetweenBall(contact.bodyB.node!, object: contact.bodyA.node!)
+        }
     }
 }
