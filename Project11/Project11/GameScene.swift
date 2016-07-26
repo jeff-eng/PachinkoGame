@@ -9,6 +9,15 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var scoreLabel: SKLabelNode!
+    
+    var score: Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
     override func didMoveToView(view: SKView) {
         let background = SKSpriteNode(imageNamed: "background.jpg")
         background.position = CGPoint(x: 512, y: 384)
@@ -24,14 +33,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             makeBouncerAt(CGPoint(x: positionBouncer * (Int(frame.width) / 4), y: 0))
         }
         
-        for index in 0...3 {
-            if index % 2 == 0 {
-                makeSlotAt(CGPoint(x: 128 + (index * 256), y: 0), isGood: true)
+        for positionSlot in 0...3 {
+            if positionSlot % 2 == 0 {
+                makeSlotAt(CGPoint(x: 128 + (positionSlot * 256), y: 0), isGood: true)
             } else {
-                makeSlotAt(CGPoint(x: 128 + (index * 256), y: 0), isGood: false)
+                makeSlotAt(CGPoint(x: 128 + (positionSlot * 256), y: 0), isGood: false)
             }
         }
         
+        // Create instance of SKLabelNode
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        // Set initial default text of label
+        scoreLabel.text = "Score: 0"
+        // Justify alignment of label to the right
+        scoreLabel.horizontalAlignmentMode = .Right
+        // Position of the label
+        scoreLabel.position = CGPoint(x: 980, y: 700)
+        // Add the score label node to the scene
+        addChild(scoreLabel)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -95,8 +114,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func collisionBetweenBall(ball: SKNode, object: SKNode) {
         if object.name == "good" {
             destroyBall(ball)
+            score += 1
         } else if object.name == "bad" {
             destroyBall(ball)
+            score -= 1
         }
     }
     
