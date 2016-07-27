@@ -43,6 +43,7 @@
 		9587F2D91D4693C7002C4F8B /* slotGlowGood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9587F2BD1D4693C7002C4F8B /* slotGlowGood@2x.png */; };
 		9587F2DA1D4693C7002C4F8B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9587F2BE1D4693C7002C4F8B /* spark.png */; };
 		9587F2DC1D482BE0002C4F8B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587F2DB1D482BE0002C4F8B /* Helper.swift */; };
+		9587F2DE1D483BB6002C4F8B /* SparksParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9587F2DD1D483BB6002C4F8B /* SparksParticles.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		9587F2BD1D4693C7002C4F8B /* slotGlowGood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotGlowGood@2x.png"; sourceTree = "<group>"; };
 		9587F2BE1D4693C7002C4F8B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		9587F2DB1D482BE0002C4F8B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		9587F2DD1D483BB6002C4F8B /* SparksParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparksParticles.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				9587F2BC1D4693C7002C4F8B /* slotGlowGood.png */,
 				9587F2BD1D4693C7002C4F8B /* slotGlowGood@2x.png */,
 				9587F2BE1D4693C7002C4F8B /* spark.png */,
+				9587F2DD1D483BB6002C4F8B /* SparksParticles.sks */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				9587F2D81D4693C7002C4F8B /* slotGlowGood.png in Resources */,
 				9587F2D31D4693C7002C4F8B /* slotBaseBad@2x.png in Resources */,
 				9587F2CE1D4693C7002C4F8B /* ballYellow@2x.png in Resources */,
+				9587F2DE1D483BB6002C4F8B /* SparksParticles.sks in Resources */,
 				9587F2D21D4693C7002C4F8B /* slotBaseBad.png in Resources */,
 				9587F2BF1D4693C7002C4F8B /* background.jpg in Resources */,
 				9587F2D51D4693C7002C4F8B /* slotBaseGood@2x.png in Resources */,
