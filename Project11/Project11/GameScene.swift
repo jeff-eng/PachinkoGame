@@ -163,6 +163,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // When finished with the ball and want to get rid of it; removeFromParent removes node from the scene
     func destroyBall(ball: SKNode) {
+        if let fireParticles = SKEmitterNode(fileNamed: "SparksParticles") {
+            fireParticles.position = ball.position
+            addChild(fireParticles)
+        }
+        
         ball.removeFromParent()
     }
     
